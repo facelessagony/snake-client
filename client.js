@@ -14,12 +14,15 @@ const connect = function () {
     // code that does something when the connection is first established
     console.log('connected!');
     conn.write("Name: ESO");
+    //// hard coded move up for 20 * 50msec spaced call backs
+    // for (let ms = 0; ms < 1000; ms += 50 ) {
+    // setTimeout(() => {
+    //   conn.write("Move: up")}, ms);
+    // }
   });
   
   conn.on("data", (msg) => {
     //on incoming data
-    
-    
     console.log(msg);
   });
 
