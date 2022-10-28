@@ -38,6 +38,14 @@ const handleUserInput = function (key) {
     connection.write('Move: down');
     console.log('Move: down');
   }
+  if (key === 'z' ) {
+    connection.write('Say: I\'m winning!');
+    console.log('Say: I\'m winning!');
+  }
+  if (key === 'x' ) {
+    connection.write('Say: I\'m losing!');
+    console.log('Say: I\'m losiong!');
+  }
 };
 
 module.exports = {

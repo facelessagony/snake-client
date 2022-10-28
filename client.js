@@ -20,7 +20,6 @@ const connect = function () {
     //   conn.write("Move: up")}, ms);
     // }
   });
-  
   conn.on("data", (msg) => {
     //on incoming data
     console.log(msg);
