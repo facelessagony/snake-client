@@ -1,7 +1,11 @@
 const { stdin } = require('process');
-// setup interface to handle user input from stdin
-const setupInput = function () {
+const client = require('./client'); 
 
+let connection;
+
+// setup interface to handle user input from stdin
+const setupInput = function (conn) {
+  connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -13,22 +17,26 @@ const setupInput = function () {
 };
 
 const handleUserInput = function (key) {
-  // your code here
+  
   if (key === '\u0003') {
     process.exit();
   }
   
-  if (key === '37' ) {
-    process.stdout.write('Move: left');
+  if (key === 'a' ) {
+    connection.write('Move: left');
+    console.log('Move: left');
   }
-  if (key === '38' ) {
-    process.stdout.write('Move: up');
+  if (key === 'w' ) {
+    connection.write('Move: up');
+    console.log('Move: up');
   }
-  if (key === '39' ) {
-    process.stdout.write('Move: right');
+  if (key === 'd' ) {
+    connection.write('Move: right');
+    console.log('Move: right');
   }
-  if (key === '40' ) {
-    process.stdout.write('Move: left');
+  if (key === 's' ) {
+    connection.write('Move: down');
+    console.log('Move: down');
   }
 };
 
